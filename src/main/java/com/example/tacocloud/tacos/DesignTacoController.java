@@ -62,7 +62,9 @@ public class DesignTacoController {
     // requests
 
     @GetMapping
-    public String showDesignForm(){
+    public String showDesignForm(Model model){
+        model.addAttribute("welcomeText","Welcome");
+        model.addAttribute("greeting","Hola Amigos!");
         return "design";
     }
 
