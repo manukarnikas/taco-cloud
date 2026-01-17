@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
             </div>
 
             <div class="ingredient-group" id="veggies">
-                <h3>Pick your protein:</h3>
+                <h3>Pick your veggies:</h3>
                 <div th:each="ingredient : ${veggies}">
                     <input th:field="*{ingredients}" type="checkbox" th:value="${ingredient.id}"/>
                     <span th:text="${ingredient.name}"></span><br/>
@@ -37,7 +38,7 @@
             </div>
 
             <div class="ingredient-group" id="cheese">
-                <h3>Pick your protein:</h3>
+                <h3>Pick your cheese:</h3>
                 <div th:each="ingredient : ${cheese}">
                     <input th:field="*{ingredients}" type="checkbox" th:value="${ingredient.id}"/>
                     <span th:text="${ingredient.name}"></span><br/>
@@ -45,7 +46,7 @@
             </div>
 
             <div class="ingredient-group" id="sauce">
-                <h3>Pick your protein:</h3>
+                <h3>Pick your sauce:</h3>
                 <div th:each="ingredient : ${sauce}">
                     <input th:field="*{ingredients}" type="checkbox" th:value="${ingredient.id}"/>
                     <span th:text="${ingredient.name}"></span><br/>
@@ -56,6 +57,10 @@
         <div>
             <h3>Name your taco creation:</h3>
             <input type="text" th:field="*{name}" />
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}">CC Num Error
+        </span>
             <br/>
 
             <button>Submit your taco</button>

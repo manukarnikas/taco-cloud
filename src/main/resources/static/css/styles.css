@@ -1,0 +1,17 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.ingredient-group {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.validationError {
+    color: red;
+}
