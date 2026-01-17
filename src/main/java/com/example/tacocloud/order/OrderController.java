@@ -1,5 +1,7 @@
 package com.example.tacocloud.order;
 
+import jakarta.validation.Valid;
+import org.springframework.validation.Errors;
 
 import com.example.tacocloud.tacos.TacoOrder;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +24,12 @@ public class OrderController {
     }
 
     @PostMapping
-    public String processOrder(TacoOrder order, SessionStatus sessionStatus){
+    public String processOrder(@Valid TacoOrder order, Errors errors, SessionStatus sessionStatus){
+
+        if(errors.hasErrors()){
+            return "orderForm";
+        }
+
         log.info("Order submitted: {}", order);
         sessionStatus.setComplete();
         return "redirect:/home";
