@@ -1,12 +1,23 @@
 package com.example.tacocloud.ingredient;
 
+import jakarta.persistence.*;
+
 import lombok.Data;
 
 @Data
+@Entity
+@Table(name="ingredient")
 public class Ingredient {
-    private final String id;
-    private final String name;
-    private final Type type;
+
+    @Id
+    private String id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type")
+    private Type type;
 
     public enum Type {
         WRAP,

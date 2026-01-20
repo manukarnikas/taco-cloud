@@ -1,12 +1,7 @@
 package com.example.tacocloud.ingredient;
 
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IngredientRepository {
 
-    Iterable<Ingredient> findAll();
-
-    Optional<Ingredient> findById(String id);
-
-    Ingredient save(Ingredient ingredient);
+public interface IngredientRepository extends JpaRepository<Ingredient, String> {
 }
