@@ -1,6 +1,8 @@
 package com.example.tacocloud.tacos;
 
-public interface TacoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    public long saveTaco(Long orderId, int orderKey, Taco taco);
+public interface TacoRepository extends JpaRepository<Taco, Long> {
 }
+
+

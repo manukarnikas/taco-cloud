@@ -32,18 +32,17 @@ public class DesignTacoController {
     }
 
     @ModelAttribute
-    public void addIngredientsToModel(Model model){
-        Iterable<Ingredient> ingredientsIterable = this.ingredientRepo.findAll();
+    public void addIngredientsToModel(Model model) {
+        List<Ingredient> ingredients = ingredientRepo.findAll();
 
-        List<Ingredient> ingredients = StreamSupport
-                .stream(ingredientsIterable.spliterator(), false)
-                .collect(Collectors.toList());
-
-        Type[] types = Ingredient.Type.values();
-        for(Type type: types){
-            model.addAttribute(type.toString().toLowerCase(),filterByType(ingredients,type));
+        for (Type type : Type.values()) {
+            model.addAttribute(
+                    type.toString().toLowerCase(),
+                    filterByType(ingredients, type)
+            );
         }
     }
+
 
     @ModelAttribute(name="tacoOrder")
     public TacoOrder order(){
@@ -57,10 +56,9 @@ public class DesignTacoController {
 
     // helper
 
-    private Iterable<Ingredient> filterByType(List<Ingredient> ingredients, Type type){
-        return ingredients
-                .stream()
-                .filter(ingredientType -> ingredientType.getType().equals(type))
+    private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
+        return ingredients.stream()
+                .filter(ingredient -> ingredient.getType() == type)
                 .collect(Collectors.toList());
     }
 
