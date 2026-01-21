@@ -1,8 +1,8 @@
 package com.example.tacocloud.tacos;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface TacoRepository extends JpaRepository<Taco, Long> {
+public interface TacoRepository extends MongoRepository<Taco, Long> {
 }
 
 

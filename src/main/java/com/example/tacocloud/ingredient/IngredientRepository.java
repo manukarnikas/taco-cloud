@@ -1,7 +1,6 @@
 package com.example.tacocloud.ingredient;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-
-public interface IngredientRepository extends JpaRepository<Ingredient, String> {
+public interface IngredientRepository extends MongoRepository<Ingredient, String> {
 }
