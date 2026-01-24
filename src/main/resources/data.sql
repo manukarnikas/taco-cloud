@@ -1,21 +1,10 @@
-delete from ingredient;
-insert into ingredient (id, name, type)
-values ('FLTO', 'Flour Tortilla', 'WRAP');
-insert into ingredient (id, name, type)
-values ('COTO', 'Corn Tortilla', 'WRAP');
-insert into ingredient (id, name, type)
-values ('GRBF', 'Ground Beef', 'PROTEIN');
-insert into ingredient (id, name, type)
-values ('CARN', 'Carnitas', 'PROTEIN');
-insert into ingredient (id, name, type)
-values ('TMTO', 'Diced Tomatoes', 'VEGGIES');
-insert into ingredient (id, name, type)
-values ('LETC', 'Lettuce', 'VEGGIES');
-insert into ingredient (id, name, type)
-values ('CHED', 'Cheddar', 'CHEESE');
-insert into ingredient (id, name, type)
-values ('JACK', 'Monterrey Jack', 'CHEESE');
-insert into ingredient (id, name, type)
-values ('SLSA', 'Salsa', 'SAUCE');
-insert into ingredient (id, name, type)
-values ('SRCR', 'Sour Cream', 'SAUCE');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('FLTO', 'Flour Tortilla', 'WRAP');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('COTO', 'Corn Tortilla', 'WRAP');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('GRBF', 'Ground Beef', 'PROTEIN');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('CARN', 'Carnitas', 'PROTEIN');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('TMTO', 'Diced Tomatoes', 'VEGGIES');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('LETC', 'Lettuce', 'VEGGIES');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('CHED', 'Cheddar', 'CHEESE');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('JACK', 'Monterrey Jack', 'CHEESE');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('SLSA', 'Salsa', 'SAUCE');
+MERGE INTO ingredient (id, name, type) KEY(id) VALUES ('SRCR', 'Sour Cream', 'SAUCE');
