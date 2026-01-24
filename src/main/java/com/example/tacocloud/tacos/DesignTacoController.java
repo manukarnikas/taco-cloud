@@ -5,6 +5,7 @@ import com.example.tacocloud.ingredient.IngredientRepository;
 import com.example.tacocloud.order.TacoOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ import com.example.tacocloud.ingredient.Ingredient.Type;
 
 @Slf4j
 @Controller
+@PreAuthorize("hasRole('USER')")
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {

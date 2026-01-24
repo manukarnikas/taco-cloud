@@ -1,6 +1,7 @@
 package com.example.tacocloud.order;
 
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.Errors;
 
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 @Slf4j
 @Controller
+@PreAuthorize("hasRole('USER')")
 @RequestMapping("/orders")
 @SessionAttributes("tacoOrder")
 public class OrderController {

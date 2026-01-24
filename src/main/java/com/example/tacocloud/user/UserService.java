@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-/** Note: Must implement UserDetailsService and override loadUserByUserName method to allow spring login default controller logic **/
+/**
+ * Note: Must implement UserDetailsService and override loadUserByUserName method to allow spring login default controller logic
+ *  Spring uses this method and also the user role granted via getAuthorities in User entity for form login
+ *  Both of these only apply to form login
+ *  **/
 @Service
 public class UserService implements UserDetailsService {
 
